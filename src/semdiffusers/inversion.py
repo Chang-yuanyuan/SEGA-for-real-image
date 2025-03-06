@@ -36,7 +36,6 @@ def inverse(test_img_path, device, NUM_DDIM_STEPS, SD_path):
         return_tensors="pt"
     ).input_ids.to(z0.device)
     uncond_embedding = text_encoder(uncond_text_ids)[0].repeat(z0.shape[0], 1, 1)
-
     all_latent, all_times = ddim_forward_loop(z0, noise_scheduler, uncond_embedding, NUM_DDIM_STEPS, unet)
     noisy_latents = all_latent[-1]
     return noisy_latents
