@@ -6,6 +6,7 @@
 We use it for edit real image.
 
 DDIM inversion to encode x_0(z_0) to x_T_(z_T), and then denoise with SEGA. 
+
 Demo is in examples
 
 
